@@ -27,20 +27,6 @@ const infoCards = [
   },
 ];
 
-const currentChoice = {
-  name: 'SHIBA',
-  contract: '0xb84cbbf09b3ed388a45cd875ebba41a20365e6e7',
-  price: '0.000000003 USD',
-  date: 'Feb 19, 2023',
-  exchange: 'MEXC or DEX',
-};
-
-const stats = [
-  { label: 'Coins Analyzed', value: '1,200+' },
-  { label: 'Total Datapoints', value: '2,500,000+' },
-  { label: 'Success Probability', value: '78%' },
-];
-
 const pastResults = [
   {
     name: 'LAVAX',
@@ -49,6 +35,7 @@ const pastResults = [
     priceAtDiscovery: '$0.02362',
     peak: 'March 4, 15:27 GMT',
     priceAtPeak: '$0.06308',
+    date: 'March 2023',
   },
   {
     name: 'SIMP',
@@ -57,6 +44,7 @@ const pastResults = [
     priceAtDiscovery: '$0.02475',
     peak: 'April 4, 14:00 GMT',
     priceAtPeak: '$0.03500',
+    date: 'April 2023',
   },
 ];
 
@@ -139,7 +127,7 @@ export default function Home() {
       {/* past results */}
       <section className="px-4 mb-12">
         <div className="flex justify-between items-top">
-          <h3 className="text-2xl md:text-7xl mb-6">Past Results</h3>
+          <h3 className="text-2xl md:text-7xl mb-6 uppercase">Past Results</h3>
           <p className="text-gray-300 text-sm mb-6 max-w-sm flex items-top gap-3">
             <span className="text-2xl">*</span>
             Past results are not indicative of future results. Fetch AI
@@ -170,6 +158,7 @@ export default function Home() {
               <div className="text-gray-300 text-sm">
                 Price at Peak: {result.priceAtPeak}
               </div>
+              <div>{result.date}</div>
             </div>
           ))}
         </div>
