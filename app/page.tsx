@@ -1,103 +1,116 @@
 import Image from "next/image";
 
+const infoCards = [
+  {
+    title: "Machine Learning",
+    description:
+      "In house developed computer systems that are able to learn and adapt without following explicit instructions, by using algorithms and statistical models to analyze and draw inferences.",
+    icon: "/images/ml-icon.gif",
+  },
+  {
+    title: "Vast Data Clusters",
+    description:
+      "Through a unique discovery process that partitions data sets into groups of high similarity the Fetch AI is able to mine gems specific to the conditions users input.",
+    icon: "/images/data-icon.gif",
+  },
+  {
+    title: "Pattern Recognition",
+    description:
+      "Fetch AI automatically recognizes patterns, regularities and irregularities in data, all in real time. Fetch can act on TA indicators before they ever exist by accurately predicting market moves. Keeping you a step ahead of all other traders.",
+    icon: "/images/pattern-icon.gif",
+  },
+  {
+    title: "Algorithmic Analyses",
+    description:
+      "The computational complexity of Fetch enables the processing of several million data points per task. As cryptocurrencies continue to grow and increase in complexity so will Fetch AI.",
+    icon: "/images/algo-icon.gif",
+  },
+];
+
+const currentChoice = {
+  name: "SHIBA",
+  contract: "0xb84cbbf09b3ed388a45cd875ebba41a20365e6e7",
+  price: "0.000000003 USD",
+  date: "Feb 19, 2023",
+  exchange: "MEXC or DEX",
+};
+
+const stats = [
+  { label: "Coins Analyzed", value: "1,200+" },
+  { label: "Total Datapoints", value: "2,500,000+" },
+  { label: "Success Probability", value: "78%" },
+];
+
+const pastResults = [
+  {
+    name: "LAVAX",
+    gain: "+167%",
+    discovered: "March 3, 15:18 GMT",
+    priceAtDiscovery: "$0.02362",
+    peak: "March 4, 15:27 GMT",
+    priceAtPeak: "$0.06308",
+  },
+  {
+    name: "SIMP",
+    gain: "+41%",
+    discovered: "April 2, 06:30 GMT",
+    priceAtDiscovery: "$0.02475",
+    peak: "April 4, 14:00 GMT",
+    priceAtPeak: "$0.03500",
+  },
+];
+
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="min-h-screen bg-gradient-to-b text-white font-sans bg-[url('/bg-pattern.jpg')]">
+      {/* hero */}
+      <section className="p-20">
+        <h1 className="text-3xl md:text-5xl font-medium mb-10 text-right">
+          Fetch AI - by Skeletor
+          <br />
+          Fetching You Top Gainers Each Week
+          </h1>
+        <Image src="/hero.gif" alt="Fetch AI Hero" width={2408} height={1092} className="mx-auto mb-4" />
+      </section>
+      {/* info cards */}
+      <section className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-6 px-4 mb-12">
+        {infoCards.map((card) => (
+          <div key={card.title} className="bg-gray-800 rounded-xl p-6 shadow-lg flex flex-col items-center">
+            <Image src={card.icon} alt={card.title} width={64} height={64} className="mb-4" />
+            <h2 className="text-lg font-semibold mb-2">{card.title}</h2>
+            <p className="text-gray-300 text-sm text-center">{card.description}</p>
+          </div>
+        ))}
+      </section>
+      {/* stats */}
+      <section className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 px-4 mb-12">
+        {stats.map((stat) => (
+          <div key={stat.label} className="bg-gray-800 rounded-xl p-6 shadow-lg flex flex-col items-center">
+            <div className="text-3xl font-bold mb-2">{stat.value}</div>
+            <div className="text-gray-300">{stat.label}</div>
+          </div>
+        ))}
+      </section>
+      {/* past results */}
+      <section className="max-w-5xl mx-auto px-4 mb-12">
+        <h3 className="text-2xl font-bold mb-6">Past Results</h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {pastResults.map((result) => (
+            <div key={result.name} className="bg-gray-800 rounded-xl p-6 shadow-lg">
+              <div className="flex justify-between items-center mb-2">
+                <span className="font-semibold text-lg">{result.name}</span>
+                <span className="text-green-400 font-bold">{result.gain}</span>
+              </div>
+              <div className="text-gray-300 text-sm mb-1">Discovered {result.discovered}</div>
+              <div className="text-gray-300 text-sm mb-1">Price at Discovery: {result.priceAtDiscovery}</div>
+              <div className="text-gray-300 text-sm mb-1">Peak: {result.peak}</div>
+              <div className="text-gray-300 text-sm">Price at Peak: {result.priceAtPeak}</div>
+            </div>
+          ))}
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        <div className="text-xs text-gray-500 mt-4">Past results are not indicative of future results. Fetch AI predictions are not financial advice. Traders use this information at their own risk.</div>
+      </section>
+      <footer className="text-center text-gray-500 py-8 text-xs">© {new Date().getFullYear()} Fetch AI. All rights reserved.</footer>
     </div>
   );
 }
