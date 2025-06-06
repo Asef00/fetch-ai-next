@@ -92,8 +92,13 @@ export default function Home() {
         ))}
       </section>
       {/* past results */}
-      <section className="max-w-5xl mx-auto px-4 mb-12">
-        <h3 className="text-2xl font-bold mb-6">Past Results</h3>
+      <section className="px-4 mb-12">
+        <div className="flex justify-between items-top">
+          <h3 className="text-2xl md:text-7xl mb-6">Past Results</h3>
+          <p className="text-gray-300 text-sm mb-6 max-w-sm flex items-top gap-3">
+            <span className="text-2xl">*</span>
+            Past results are not indicative of future results. Fetch AI predictions are not financial advice. Traders use this information at their own risk.</p>
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {pastResults.map((result) => (
             <div key={result.name} className="bg-gray-800 rounded-xl p-6 shadow-lg">
