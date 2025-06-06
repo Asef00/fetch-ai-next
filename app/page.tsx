@@ -110,7 +110,6 @@ export default function Home() {
         </div>
         <div className="text-xs text-gray-500 mt-4">Past results are not indicative of future results. Fetch AI predictions are not financial advice. Traders use this information at their own risk.</div>
       </section>
-      <footer className="text-center text-gray-500 py-8 text-xs">© {new Date().getFullYear()} Fetch AI. All rights reserved.</footer>
     </div>
   );
 }
