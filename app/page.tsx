@@ -101,8 +101,15 @@ export default function Home() {
         </div>
       </section>
       {/* stats */}
-      <section className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 px-4 mb-12">
-        <div className="flex flex-col">
+      <section className="grid grid-cols-1 md:grid-cols-2 gap-6 px-4 mb-12">
+        <Image
+          src="/fetch.gif"
+          alt="Fetch AI Hero"
+          width={600}
+          height={273}
+          className="mx-auto"
+        />
+        <div className="flex flex-col max-w-md mx-auto">
           <h2 className="text-2xl md:text-5xl mb-6">
             <span className="text-sm mb-8">— The Future of Trading</span>
             <br />
