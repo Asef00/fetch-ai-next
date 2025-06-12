@@ -27,6 +27,12 @@ const infoCards = [
   },
 ];
 
+const stats = [
+  { label: 'Coins Analyzed', value: '1,200+' },
+  { label: 'Total Datapoints', value: '2,500,000+' },
+  { label: 'Success Probability', value: '78%' },
+];
+
 const pastResults = [
   {
     name: 'LAVAX',
